@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sherkatModelStoreContainer" CdmEntityContainer="s1">
+    <EntitySetMapping Name="tbl_coll">
+      <EntityTypeMapping TypeName="sherkatModel.tbl_coll">
+        <MappingFragment StoreEntitySet="tbl_coll">
+          <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+          <ScalarProperty Name="coimgpth" ColumnName="coimgpth" />
+          <ScalarProperty Name="coabout" ColumnName="coabout" />
+          <ScalarProperty Name="coexpertise" ColumnName="coexpertise" />
+          <ScalarProperty Name="coinfo" ColumnName="coinfo" />
+          <ScalarProperty Name="colocation" ColumnName="colocation" />
+          <ScalarProperty Name="cophnumber" ColumnName="cophnumber" />
+          <ScalarProperty Name="coexperience" ColumnName="coexperience" />
+          <ScalarProperty Name="coemail" ColumnName="coemail" />
+          <ScalarProperty Name="coposition" ColumnName="coposition" />
+          <ScalarProperty Name="cofamily" ColumnName="cofamily" />
+          <ScalarProperty Name="coname" ColumnName="coname" />
+          <ScalarProperty Name="coid" ColumnName="coid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_serivice_fea">
+      <EntityTypeMapping TypeName="sherkatModel.tbl_serivice_fea">
+        <MappingFragment StoreEntitySet="tbl_serivice_fea">
+          <ScalarProperty Name="ch6" ColumnName="ch6" />
+          <ScalarProperty Name="ch5" ColumnName="ch5" />
+          <ScalarProperty Name="ch4" ColumnName="ch4" />
+          <ScalarProperty Name="ch3" ColumnName="ch3" />
+          <ScalarProperty Name="ch2" ColumnName="ch2" />
+          <ScalarProperty Name="ch1" ColumnName="ch1" />
+          <ScalarProperty Name="thdes" ColumnName="thdes" />
+          <ScalarProperty Name="thtitle" ColumnName="thtitle" />
+          <ScalarProperty Name="ssid" ColumnName="ssid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_service_second">
+      <EntityTypeMapping TypeName="sherkatModel.tbl_service_second">
+        <MappingFragment StoreEntitySet="tbl_service_second">
+          <ScalarProperty Name="secondDes" ColumnName="secondDes" />
+          <ScalarProperty Name="secondTitle" ColumnName="secondTitle" />
+          <ScalarProperty Name="c3img" ColumnName="c3img" />
+          <ScalarProperty Name="c3title" ColumnName="c3title" />
+          <ScalarProperty Name="c2img" ColumnName="c2img" />
+          <ScalarProperty Name="c2title" ColumnName="c2title" />
+          <ScalarProperty Name="c1img" ColumnName="c1img" />
+          <ScalarProperty Name="c1title" ColumnName="c1title" />
+          <ScalarProperty Name="srcdes" ColumnName="srcdes" />
+          <ScalarProperty Name="srcid" ColumnName="srcid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_service">
+      <EntityTypeMapping TypeName="sherkatModel.tbl_service">
+        <MappingFragment StoreEntitySet="tbl_service">
+          <ScalarProperty Name="check4" ColumnName="check4" />
+          <ScalarProperty Name="check3" ColumnName="check3" />
+          <ScalarProperty Name="check2" ColumnName="check2" />
+          <ScalarProperty Name="check1" ColumnName="check1" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="headimg" ColumnName="headimg" />
+          <ScalarProperty Name="smtitle" ColumnName="smtitle" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_service_card">
+      <EntityTypeMapping TypeName="sherkatModel.tbl_service_card">
+        <MappingFragment StoreEntitySet="tbl_service_card">
+          <ScalarProperty Name="cdes" ColumnName="cdes" />
+          <ScalarProperty Name="ctitle" ColumnName="ctitle" />
+          <ScalarProperty Name="f3check" ColumnName="f3check" />
+          <ScalarProperty Name="f3text" ColumnName="f3text" />
+          <ScalarProperty Name="f3titlle" ColumnName="f3titlle" />
+          <ScalarProperty Name="f2check" ColumnName="f2check" />
+          <ScalarProperty Name="f2text" ColumnName="f2text" />
+          <ScalarProperty Name="f2title" ColumnName="f2title" />
+          <ScalarProperty Name="f1check" ColumnName="f1check" />
+          <ScalarProperty Name="f1text" ColumnName="f1text" />
+          <ScalarProperty Name="f1title" ColumnName="f1title" />
+          <ScalarProperty Name="scid" ColumnName="scid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_blog">
+      <EntityTypeMapping TypeName="sherkatModel.tbl_blog">
+        <MappingFragment StoreEntitySet="tbl_blog">
+          <ScalarProperty Name="dateye" ColumnName="dateye" />
+          <ScalarProperty Name="datemon" ColumnName="datemon" />
+          <ScalarProperty Name="dateday" ColumnName="dateday" />
+          <ScalarProperty Name="ltext" ColumnName="ltext" />
+          <ScalarProperty Name="c5" ColumnName="c5" />
+          <ScalarProperty Name="c4" ColumnName="c4" />
+          <ScalarProperty Name="c3" ColumnName="c3" />
+          <ScalarProperty Name="c2" ColumnName="c2" />
+          <ScalarProperty Name="c1" ColumnName="c1" />
+          <ScalarProperty Name="thtext" ColumnName="thtext" />
+          <ScalarProperty Name="sectitle" ColumnName="sectitle" />
+          <ScalarProperty Name="sectext" ColumnName="sectext" />
+          <ScalarProperty Name="bold" ColumnName="bold" />
+          <ScalarProperty Name="firsttext" ColumnName="firsttext" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="btitle" ColumnName="btitle" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

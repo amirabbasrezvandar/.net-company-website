@@ -1,0 +1,391 @@
+﻿@model sherkaty.Models.tbl_coll
+@{
+    ViewBag.Title = "edteam_single";
+    Layout = "~/Views/Shared/_admin_layout.cshtml";
+}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ویرایش اطلاعات همکار</title>
+<link href="~/styles/home/css/tailwind.min.css" rel="stylesheet" />
+
+<link href="~/styles/home/css/all.min.css" rel="stylesheet" />
+<style>
+    body {
+        font-family: 'Vazir', sans-serif;
+        background-color: #f8fafc;
+        color: #334155;
+    }
+
+    .form-container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .form-header {
+        background: linear-gradient(135deg, #4f46e5, #3b82f6);
+        padding: 1.5rem 2rem;
+        color: white;
+        position: relative;
+    }
+
+        .form-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+        }
+
+    .form-body {
+        padding: 2rem;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background-color: #f8fafc;
+    }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            background-color: white;
+        }
+
+    .form-label {
+        position: absolute;
+        top: 0.75rem;
+        left: 1rem;
+        color: #64748b;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    .form-input:focus + .form-label,
+    .form-input:not(:placeholder-shown) + .form-label {
+        transform: translateY(-1.5rem) scale(0.85);
+        color: #3b82f6;
+        font-weight: 600;
+    }
+
+    .form-textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 1rem;
+        min-height: 150px;
+        transition: all 0.3s ease;
+        background-color: #f8fafc;
+        resize: vertical;
+    }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            background-color: white;
+        }
+
+    .image-upload-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .image-preview {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        border: 3px solid #e2e8f0;
+        position: relative;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+        .image-preview:hover {
+            border-color: #3b82f6;
+        }
+
+    .preview-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .custom-file-upload {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, #4f46e5, #3b82f6);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+    }
+
+        .custom-file-upload:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.4);
+        }
+
+        .custom-file-upload:active {
+            transform: translateY(0);
+        }
+
+    .file-upload {
+        display: none;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #4f46e5, #3b82f6);
+        color: white;
+        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+    }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+    .btn-danger {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        color: white;
+        box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.3);
+    }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -1px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-danger:active {
+            transform: translateY(0);
+        }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .floating-label-group {
+        position: relative;
+    }
+
+    .floating-label {
+        position: absolute;
+        top: -0.5rem;
+        right: 0.75rem;
+        padding: 0 0.5rem;
+        background-color: white;
+        color: #3b82f6;
+        font-size: 0.875rem;
+        font-weight: 600;
+        z-index: 1;
+    }
+</style>
+</head>
+<body class="py-10">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <div class="form-container">
+            <div class="form-header">
+                <h2 class="text-2xl font-bold">ویرایش اطلاعات همکار</h2>
+                <p class="text-blue-100 mt-1">لطفا اطلاعات همکار را با دقت وارد کنید</p>
+            </div>
+
+            <div class="form-body">
+                @using (Html.BeginForm("edteam_single", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(a => a.coid)
+                    @Html.HiddenFor(m => m.coimgpth)
+
+                    <div class="image-upload-container">
+                        <div class="image-preview">
+                            <img id="preview-img"
+                                 src="@($"{Url.Content("~/styles/home/images/" + Model.coimgpth)}?v={DateTime.Now.Ticks}")"
+                                 class="preview-img"
+                                 />
+
+                        </div>
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="fas fa-cloud-upload-alt ml-2"></i>
+                            بارگذاری تصویر جدید
+                        </label>
+                        <input type="file"
+                               id="file-upload"
+                               name="ImageUpload"
+                               accept="image/*"
+                               class="file-upload" />
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="floating-label-group">
+                            <span class="floating-label">نام</span>
+                            @Html.TextBoxFor(m => m.coname, new
+                       {
+                           @class = "form-input",
+                           placeholder = " "
+                       })
+                        </div>
+
+                        <div class="floating-label-group">
+                            <span class="floating-label">نام خانوادگی</span>
+                            @Html.TextBoxFor(m => m.cofamily, new
+                       {
+                           @class = "form-input",
+                           placeholder = " "
+                       })
+                        </div>
+
+                        <div class="floating-label-group">
+                            <span class="floating-label">سمت شغلی</span>
+                            @Html.TextBoxFor(m => m.coposition, new
+                       {
+                           @class = "form-input",
+                           placeholder = " "
+                       })
+                        </div>
+
+                        <div class="floating-label-group">
+                            <span class="floating-label">ایمیل</span>
+                            @Html.TextBoxFor(m => m.coemail, new
+                       {
+                           @class = "form-input",
+                           placeholder = " ",
+                           type = "email"
+                       })
+                        </div>
+
+                        <div class="floating-label-group">
+                            <span class="floating-label">شماره تماس</span>
+                            @Html.TextBoxFor(m => m.cophnumber, new
+                       {
+                           @class = "form-input",
+                           placeholder = " "
+                       })
+                        </div>
+
+                        <div class="floating-label-group">
+                            <span class="floating-label">تجربه</span>
+                            @Html.TextBoxFor(m => m.coexperience, new
+                       {
+                           @class = "form-input",
+                           placeholder = " "
+                       })
+                        </div>
+
+                        <div class="floating-label-group md:col-span-2">
+                            <span class="floating-label">مکان</span>
+                            @Html.TextBoxFor(m => m.colocation, new
+                       {
+                           @class = "form-input",
+                           placeholder = " "
+                       })
+                        </div>
+
+                        <div class="floating-label-group md:col-span-2">
+                            <span class="floating-label">درباره من</span>
+                            @Html.TextAreaFor(m => m.coabout, new
+                       {
+                           @class = "form-textarea",
+                           placeholder = " ",
+                           rows = "4"
+                       })
+                        </div>
+
+                        <div class="floating-label-group md:col-span-2">
+                            <span class="floating-label">اطلاعات</span>
+                            @Html.TextAreaFor(m => m.coinfo, new
+                       {
+                           @class = "form-textarea",
+                           placeholder = " ",
+                           rows = "4"
+                       })
+                        </div>
+
+                        <div class="floating-label-group md:col-span-2">
+                            <span class="floating-label">تخصص</span>
+                            @Html.TextAreaFor(m => m.coexpertise, new
+                       {
+                           @class = "form-textarea",
+                           placeholder = " ",
+                           rows = "4"
+                       })
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save ml-2"></i>
+                            ذخیره تغییرات
+                        </button>
+                    </div>
+                }
+                @using (Html.BeginForm("delteam", "admin", new { id = Model.coid }, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <button type="submit"
+                            class="btn btn-danger"
+                            onclick="return confirm('آیا مطمئن هستید که می‌خواهید این همکار را حذف کنید؟');">
+                        <i class="fas fa-trash-alt ml-2"></i>
+                        حذف همکار
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function (e) {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (evt) {
+                    document.getElementById('preview-img').src = evt.target.result;
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    </script>
+</body>
+
+

@@ -1,0 +1,275 @@
+﻿@model sherkaty.Models.ViewModels.ServiceSingleViewModel
+
+
+@{
+    ViewBag.Title = "service_single";
+    Layout = "~/Views/Shared/_home_layout.cshtml";
+    var serv = ViewBag.service as List<sherkaty.Models.tbl_service>;
+    
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-2" data-cursor="-opaque"> @Model.service.smtitle</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index">صفحه اصلی</a></li>
+                            <li class="breadcrumb-item"><a href="services.html">خدمات</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> مدیریت سرمایه گذاری</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Page Service Single Start -->
+<div class="page-service-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Service Sidebar Start --> 
+                <div class="service-sidebar">
+                    <!-- Service Category List Start -->
+                    <div class="service-catagery-list wow fadeInUp">
+                        <h3>خدمات ما</h3>
+                        <ul>@foreach(var a in Model.see) {
+                            <li><a href="#">@a.smtitle</a></li>
+                        }
+                        </ul>
+                    </div>
+                    <!-- Service Category List End -->
+                    <!-- Sidebar Cta Box Start -->
+                    <div class="sidebar-cta-box wow fadeInUp" data-wow-delay="0.25s">
+                        <!-- CTA Contact Content Start -->
+                        <div class="cta-box-content">
+                            <img src="~/styles/home/images/logo.svg" alt="">
+                            <h3> به کمک نیاز دارید؟ ما اینجا هستیم تا به شما کمک کنیم</h3>
+                        </div>
+                        <!-- CTA Contact Content End -->
+                        <!-- CTA Contact Info Start -->
+                        <div class="cta-contact-info">
+                            <!-- CTA Info Item Start -->
+                            <div class="cta-info-item">
+                                <p>نیاز به کمک!</p>
+                                <h3 dir="ltr">+91 - 123 456 890</h3>
+                            </div>
+                            <!-- CTA Info Item End -->
+                            <!-- CTA Info Item Start -->
+                            <div class="cta-info-item">
+                                <p>ایمیل فعال</p>
+                                <h3>info@gmail.com</h3>
+                            </div>
+                            <!-- CTA Info Item End -->
+                        </div>
+                        <!-- CTA Contact Info End -->
+                    </div>
+                    <!-- Sidebar Cta Box End -->
+                </div>
+                <!-- Service Sidebar End -->
+            </div>
+            <div class="col-lg-8">
+                <!-- Case Study Single Content Start -->
+                <div class="service-single-content">
+                    <!-- Case Study Image Start -->
+                    <div class="service-featured-image">
+                        <figure class="image-anime reveal">
+                            <img src="~/styles/home/images/service-single-img.jpg" alt="">
+                        </figure>
+                    </div>
+                    <!-- Case Study Image End -->
+                    <!-- Case Study Entry Start -->
+                    <div class="service-entry">
+                        <p class="wow fadeInUp">
+                            @Model.service.des
+                        </p>
+
+                        <!-- Case Study List Video Start -->
+                        <div class="service-list-video">
+                            <!-- Case Study List Start -->
+                            <div class="service-entry-list wow fadeInUp" data-wow-delay="0.2s">
+                                <ul>
+                                    
+                                    <li>@Model.service.check1</li>
+                                    <li>@Model.service.check2</li>
+                                    <li>@Model.service.check3</li>
+                                    <li>@Model.service.check4</li>
+                                </ul>
+                            </div>
+                            <!-- Case Study List End -->
+                            <!-- Case Study Image Video End -->
+                        </div>
+                        <!-- Case Study List Video End -->
+                        <!-- Service Guidance Box Satrt -->
+                        <div class="service-guidance">
+                            <h2 class="text-anime-style-2">@Model.secon.secondTitle</h2>
+
+                            <p class="wow fadeInUp">
+                                @Model.secon.secondDes
+                            </p>
+
+                            <!-- Service Guidance Box Start -->
+                            <div class="service-guidance-box">
+                                <!-- Service Guidance Item Start -->
+                                <div class="service-guidance-item wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="service-guidance-content">
+                                        <div class="icon-box">
+                                            <img src="~/styles/home/images/icon-service-6.svg" alt="">
+                                        </div>
+                                        <div class="service-guidance-title">
+                                            <h3>@Model.secon.c1title</h3>
+                                        </div>
+                                    </div>
+                                    <div class="service-guidance-img">
+                                        <figure class="image-anime">
+                                            <img src="~/styles/home/images/service-guidance-img-1.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <!-- Service Guidance Item End -->
+                                <!-- Service Guidance Item Start -->
+                                <div class="service-guidance-item wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="service-guidance-content">
+                                        <div class="icon-box">
+                                            <img src="~/styles/home/images/icon-service-3.svg" alt="">
+                                        </div>
+                                        <div class="service-guidance-title">
+                                            <h3> @Model.secon.c2title</h3>
+                                        </div>
+                                    </div>
+                                    <div class="service-guidance-img">
+                                        <figure class="image-anime">
+                                            <img src="~/styles/home/images/service-guidance-img-2.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <!-- Service Guidance Item End -->
+                                <!-- Service Guidance Item Start -->
+                                <div class="service-guidance-item wow fadeInUp" data-wow-delay="0.6s">
+                                    <div class="service-guidance-content">
+                                        <div class="icon-box">
+                                            <img src="~/styles/home/images/icon-service-2.svg" alt="">
+                                        </div>
+                                        <div class="service-guidance-title">
+                                            <h3>@Model.secon.c3title</h3>
+                                        </div>
+                                    </div>
+                                    <div class="service-guidance-img">
+                                        <figure class="image-anime">
+                                            <img src="~/styles/home/images/service-guidance-img-3.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <!-- Service Guidance Item End -->
+                            </div>
+                            <!-- Service Guidance Box End -->
+                        </div>
+                        <!-- Service Guidance Box End -->
+                        <!-- Service Steps Start -->
+                        <div class="services-steps">
+                            <h2 class="text-anime-style-2">@Model.card.ctitle</h2>
+
+                            <p class="wow fadeInUp">
+                             @Model.card.cdes
+                            </p>
+
+                            <!-- Service Step Box Start -->
+                            <div class="service-steps-box">
+                                <!-- Service Step Item List Start -->
+                                <div class="service-step-item-list">
+                                    <!-- Service Step Item Start -->
+                                    <div class="service-step-item wow fadeInUp">
+                                        <div class="icon-box">
+                                            <img src="~/styles/home/images/icon-service-4.svg" alt="">
+                                        </div>
+                                        <div class="service-step-item-content">
+                                            <h3> @Model.card.f1title </h3>
+                                            <p>
+                                                @Model.card.f1text
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Step Item End -->
+                                    <!-- Service Step Item Start -->
+                                    <div class="service-step-item wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="icon-box">
+                                            <img src="~/styles/home/images/icon-service-5.svg" alt="">
+                                        </div>
+                                        <div class="service-step-item-content">
+                                            <h3>@Model.card.f2title</h3>
+                                            <p>
+                                                @Model.card.f2text
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Step Item End -->
+                                    <!-- Service Step Item Start -->
+                                    <div class="service-step-item wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="icon-box">
+                                            <img src="~/styles/home/images/icon-service-6.svg" alt="">
+                                        </div>
+                                        <div class="service-step-item-content">
+                                            <h3>@Model.card.f3titlle</h3>
+                                            <p>
+                                                @Model.card.f3text
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Step Item End -->
+                                </div>
+                                <!-- Service Step Item List End -->
+                                <!-- Service Entry List Start -->
+                                <div class="service-entry-list wow fadeInUp" data-wow-delay="0.6s">
+                                    <ul>
+                                        <li>@Model.card.f1check</li>
+                                        <li>@Model.card.f2check</li>
+                                        <li>@Model.card.f3check</li>
+                                    </ul>
+                                </div>
+                                <!-- Service Entry List End -->
+                            </div>
+                            <!-- Service Step Box End -->
+                        </div>
+                        <!-- Service Steps End -->
+                        <!-- Service Feature Start -->
+                        <div class="service-feature">
+                            <h2 class="text-anime-style-2">@Model.fea.thtitle</h2>
+
+                            <p class="wow fadeInUp">
+                                @Model.fea.thdes
+
+                            </p>
+
+                            <!-- Service Entry List Start -->
+                            <div class="service-entry-list wow fadeInUp" data-wow-delay="0.2s">
+                                <ul>
+                                    <li>@Model.fea.ch1</li>
+                                    <li>@Model.fea.ch2</li>
+                                    <li>@Model.fea.ch3</li>
+                                    <li>@Model.fea.ch4</li>
+                                    <li>@Model.fea.ch5</li>
+                                    <li>@Model.fea.ch6</li>
+
+                                </ul>
+                            </div>
+                            <!-- Service Entry List End -->
+                        </div>
+                        <!-- Service Feature End -->
+                    </div>
+                    <!-- Case Study Entry End -->
+
+                </div>
+                <!-- Case Study Single Content End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Service Single End -->
+<!-- Page Service Single End -->

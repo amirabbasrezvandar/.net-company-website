@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "contact";
+    Layout = "~/Views/Shared/_home_layout.cshtml";
+}
+
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">تماس با ما</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index">صفحه اصلی</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">تماس با ما</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Page Contact Us Start -->
+<div class="page-contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <!-- Conatct Info Item Start -->
+                <div class="contact-info-item wow fadeInUp">
+                    <div class="contact-info-img">
+                        <figure class="image-anime">
+                            <img src="~/styles/home/images/contact-info-img-1.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="contact-info-body">
+                        <div class="icon-box">
+                            <img src="~/styles/home/images/icon-phone.svg" alt="">
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>با ما تماس بگیرید!</h3>
+                            <p dir="ltr">+98910-1234567</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conatct Info Item End -->
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <!-- Conatct Info Item Start -->
+                <div class="contact-info-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="contact-info-img">
+                        <figure class="image-anime">
+                            <img src="~/styles/home/images/contact-info-img-2.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="contact-info-body">
+                        <div class="icon-box">
+                            <img src="~/styles/home/images/icon-mail.svg" alt="">
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>به ما ایمیل دهید.</h3>
+                            <p>info@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conatct Info Item End -->
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <!-- Conatct Info Item Start -->
+                <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="contact-info-img">
+                        <figure class="image-anime">
+                            <img src="~/styles/home/images/contact-info-img-1.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="contact-info-body">
+                        <div class="icon-box">
+                            <img src="~/styles/home/images/icon-location.svg" alt="">
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>آدرس ما</h3>
+                            <p>ایران - تهران - خیابان آزادی</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conatct Info Item End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Contact Us End -->
+<!-- Contact Form Section Start -->
+<div class="contact-form-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <!-- Contact Form Image Start -->
+                <div class="contact-form-img">
+                    <figure class="image-anime reveal">
+                        <img src="~/styles/home/images/contact-us-img.jpg" alt="">
+                    </figure>
+                </div>
+                <!-- Contact Form Image End -->
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">تماس با ما</h3>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque"> <span>با ما</span>در تماس باشید .</h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">
+                        سؤالی دارید یا به کمک نیاز دارید؟ امروز با ما
+                        تماس بگیرید! ما اینجا هستیم تا راه حل های تخصصی و پشتیبانی دوستانه ارائه دهیم.
+                    </p>
+                </div>
+                <!-- Section Title End -->
+
+                <div class="contact-form">
+                    <!-- Contact Form Start -->
+                    <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp"
+                          data-wow-delay="0.4s">
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="text" name="fname" class="form-control" id="fname" placeholder="نام"
+                                       required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="text" name="lname" class="form-control" id="lname"
+                                       placeholder="نام خانوادگی" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="text" name="phone" class="form-control" id="phone"
+                                       placeholder="شماره تماس" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="ایمیل"
+                                       required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-12 mb-5">
+                                <textarea name="message" class="form-control" id="message" rows="4"
+                                          placeholder="پیام"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <button type="submit" class="btn-default">ارسال پیام</button>
+                                <div id="msgSubmit" class="h3 hidden"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Contact Form End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Form Section End -->
+<!-- Google Map Start -->
+<div class="google-map">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Google Map Start -->
+                <div class="google-map-iframe">
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d153781.30803441687!2d51.39274693703072!3d35.7163666608125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3dcd9%3A0xf0b3697c567024bc!2z2KrZh9ix2KfZhtiMINin2LPYqtin2YYg2KrZh9ix2KfZhtiMINin24zYsdin2YY!5e0!3m2!1sfa!2s!4v1744040875042!5m2!1sfa!2s"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Google Map End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Google Map End -->

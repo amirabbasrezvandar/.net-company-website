@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="sherkatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_blog">
+          <Key>
+            <PropertyRef Name="bid" />
+          </Key>
+          <Property Name="bid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="btitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="img" Type="nvarchar" MaxLength="100" />
+          <Property Name="firsttext" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="bold" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sectext" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sectitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="thtext" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="c1" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="c2" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="c3" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="c4" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="c5" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ltext" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="dateday" Type="int" Nullable="false" />
+          <Property Name="datemon" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="dateye" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_coll">
+          <Key>
+            <PropertyRef Name="coid" />
+          </Key>
+          <Property Name="coid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="coname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cofamily" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="coposition" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="coemail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="coexperience" Type="nvarchar" MaxLength="50" />
+          <Property Name="cophnumber" Type="int" />
+          <Property Name="colocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="coinfo" Type="nvarchar(max)" />
+          <Property Name="coexpertise" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="coabout" Type="nvarchar(max)" />
+          <Property Name="coimgpth" Type="varchar" MaxLength="50" />
+          <Property Name="IsFeatured" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_serivice_fea">
+          <Key>
+            <PropertyRef Name="ssid" />
+          </Key>
+          <Property Name="ssid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="thtitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="thdes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ch1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ch2" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ch3" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ch4" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ch5" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ch6" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_service">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="smtitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="headimg" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="des" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="vid" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="check1" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="check2" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="check3" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="check4" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_service_card">
+          <Key>
+            <PropertyRef Name="scid" />
+          </Key>
+          <Property Name="scid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="f1title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="f1text" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="f1check" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="f2title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="f2text" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="f2check" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="f3titlle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="f3text" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="f3check" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ctitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cdes" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '39832_sherkat.dbo.tbl_service_second' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_service_second">
+          <Key>
+            <PropertyRef Name="srcid" />
+            <PropertyRef Name="srcdes" />
+            <PropertyRef Name="c1title" />
+            <PropertyRef Name="c1img" />
+            <PropertyRef Name="c2title" />
+            <PropertyRef Name="c2img" />
+            <PropertyRef Name="c3title" />
+            <PropertyRef Name="c3img" />
+            <PropertyRef Name="secondTitle" />
+            <PropertyRef Name="secondDes" />
+          </Key>
+          <Property Name="srcid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="srcdes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="c1title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="c1img" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="c2title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="c2img" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="c3title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="c3img" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="secondTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="secondDes" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="sherkatModelStoreContainer">
+          <EntitySet Name="tbl_blog" EntityType="Self.tbl_blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_coll" EntityType="Self.tbl_coll" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_serivice_fea" EntityType="Self.tbl_serivice_fea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_service" EntityType="Self.tbl_service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_service_card" EntityType="Self.tbl_service_card" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_service_second" EntityType="Self.tbl_service_second" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_service_second].[srcid] AS [srcid], 
+    [tbl_service_second].[srcdes] AS [srcdes], 
+    [tbl_service_second].[c1title] AS [c1title], 
+    [tbl_service_second].[c1img] AS [c1img], 
+    [tbl_service_second].[c2title] AS [c2title], 
+    [tbl_service_second].[c2img] AS [c2img], 
+    [tbl_service_second].[c3title] AS [c3title], 
+    [tbl_service_second].[c3img] AS [c3img], 
+    [tbl_service_second].[secondTitle] AS [secondTitle], 
+    [tbl_service_second].[secondDes] AS [secondDes]
+    FROM [dbo].[tbl_service_second] AS [tbl_service_second]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sherkatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="s1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_coll" EntityType="sherkatModel.tbl_coll" />
+          <EntitySet Name="tbl_serivice_fea" EntityType="sherkatModel.tbl_serivice_fea" />
+          <EntitySet Name="tbl_service_second" EntityType="sherkatModel.tbl_service_second" />
+          <EntitySet Name="tbl_service" EntityType="sherkatModel.tbl_service" />
+          <EntitySet Name="tbl_service_card" EntityType="sherkatModel.tbl_service_card" />
+          <EntitySet Name="tbl_blog" EntityType="sherkatModel.tbl_blog" />
+        </EntityContainer>
+        <EntityType Name="tbl_coll">
+          <Key>
+            <PropertyRef Name="coid" />
+          </Key>
+          <Property Name="coid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="coname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cofamily" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="coposition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="coemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="coexperience" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cophnumber" Type="Int32" />
+          <Property Name="colocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="coinfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="coexpertise" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="coabout" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="coimgpth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsFeatured" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_serivice_fea">
+          <Key>
+            <PropertyRef Name="ssid" />
+          </Key>
+          <Property Name="ssid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="thtitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="thdes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ch1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ch2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ch3" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ch4" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ch5" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ch6" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_service_second">
+          <Key>
+            <PropertyRef Name="srcid" />
+            <PropertyRef Name="srcdes" />
+            <PropertyRef Name="c1title" />
+            <PropertyRef Name="c1img" />
+            <PropertyRef Name="c2title" />
+            <PropertyRef Name="c2img" />
+            <PropertyRef Name="c3title" />
+            <PropertyRef Name="c3img" />
+            <PropertyRef Name="secondTitle" />
+            <PropertyRef Name="secondDes" />
+          </Key>
+          <Property Name="srcid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="srcdes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="c1title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="c1img" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="c2title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="c2img" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="c3title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="c3img" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="secondTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="secondDes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_service">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="smtitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="headimg" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vid" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="check1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="check2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="check3" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="check4" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_service_card">
+          <Key>
+            <PropertyRef Name="scid" />
+          </Key>
+          <Property Name="scid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="f1title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="f1text" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="f1check" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="f2title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="f2text" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="f2check" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="f3titlle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="f3text" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="f3check" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ctitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cdes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_blog">
+          <Key>
+            <PropertyRef Name="bid" />
+          </Key>
+          <Property Name="bid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="btitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="firsttext" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bold" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sectext" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sectitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="thtext" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="c1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="c2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="c3" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="c4" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="c5" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ltext" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dateday" Type="Int32" Nullable="false" />
+          <Property Name="datemon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dateye" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sherkatModelStoreContainer" CdmEntityContainer="s1">
+          <EntitySetMapping Name="tbl_coll">
+            <EntityTypeMapping TypeName="sherkatModel.tbl_coll">
+              <MappingFragment StoreEntitySet="tbl_coll">
+                <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+                <ScalarProperty Name="coimgpth" ColumnName="coimgpth" />
+                <ScalarProperty Name="coabout" ColumnName="coabout" />
+                <ScalarProperty Name="coexpertise" ColumnName="coexpertise" />
+                <ScalarProperty Name="coinfo" ColumnName="coinfo" />
+                <ScalarProperty Name="colocation" ColumnName="colocation" />
+                <ScalarProperty Name="cophnumber" ColumnName="cophnumber" />
+                <ScalarProperty Name="coexperience" ColumnName="coexperience" />
+                <ScalarProperty Name="coemail" ColumnName="coemail" />
+                <ScalarProperty Name="coposition" ColumnName="coposition" />
+                <ScalarProperty Name="cofamily" ColumnName="cofamily" />
+                <ScalarProperty Name="coname" ColumnName="coname" />
+                <ScalarProperty Name="coid" ColumnName="coid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_serivice_fea">
+            <EntityTypeMapping TypeName="sherkatModel.tbl_serivice_fea">
+              <MappingFragment StoreEntitySet="tbl_serivice_fea">
+                <ScalarProperty Name="ch6" ColumnName="ch6" />
+                <ScalarProperty Name="ch5" ColumnName="ch5" />
+                <ScalarProperty Name="ch4" ColumnName="ch4" />
+                <ScalarProperty Name="ch3" ColumnName="ch3" />
+                <ScalarProperty Name="ch2" ColumnName="ch2" />
+                <ScalarProperty Name="ch1" ColumnName="ch1" />
+                <ScalarProperty Name="thdes" ColumnName="thdes" />
+                <ScalarProperty Name="thtitle" ColumnName="thtitle" />
+                <ScalarProperty Name="ssid" ColumnName="ssid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_service_second">
+            <EntityTypeMapping TypeName="sherkatModel.tbl_service_second">
+              <MappingFragment StoreEntitySet="tbl_service_second">
+                <ScalarProperty Name="secondDes" ColumnName="secondDes" />
+                <ScalarProperty Name="secondTitle" ColumnName="secondTitle" />
+                <ScalarProperty Name="c3img" ColumnName="c3img" />
+                <ScalarProperty Name="c3title" ColumnName="c3title" />
+                <ScalarProperty Name="c2img" ColumnName="c2img" />
+                <ScalarProperty Name="c2title" ColumnName="c2title" />
+                <ScalarProperty Name="c1img" ColumnName="c1img" />
+                <ScalarProperty Name="c1title" ColumnName="c1title" />
+                <ScalarProperty Name="srcdes" ColumnName="srcdes" />
+                <ScalarProperty Name="srcid" ColumnName="srcid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_service">
+            <EntityTypeMapping TypeName="sherkatModel.tbl_service">
+              <MappingFragment StoreEntitySet="tbl_service">
+                <ScalarProperty Name="check4" ColumnName="check4" />
+                <ScalarProperty Name="check3" ColumnName="check3" />
+                <ScalarProperty Name="check2" ColumnName="check2" />
+                <ScalarProperty Name="check1" ColumnName="check1" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="headimg" ColumnName="headimg" />
+                <ScalarProperty Name="smtitle" ColumnName="smtitle" />
+                <ScalarProperty Name="sid" ColumnName="sid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_service_card">
+            <EntityTypeMapping TypeName="sherkatModel.tbl_service_card">
+              <MappingFragment StoreEntitySet="tbl_service_card">
+                <ScalarProperty Name="cdes" ColumnName="cdes" />
+                <ScalarProperty Name="ctitle" ColumnName="ctitle" />
+                <ScalarProperty Name="f3check" ColumnName="f3check" />
+                <ScalarProperty Name="f3text" ColumnName="f3text" />
+                <ScalarProperty Name="f3titlle" ColumnName="f3titlle" />
+                <ScalarProperty Name="f2check" ColumnName="f2check" />
+                <ScalarProperty Name="f2text" ColumnName="f2text" />
+                <ScalarProperty Name="f2title" ColumnName="f2title" />
+                <ScalarProperty Name="f1check" ColumnName="f1check" />
+                <ScalarProperty Name="f1text" ColumnName="f1text" />
+                <ScalarProperty Name="f1title" ColumnName="f1title" />
+                <ScalarProperty Name="scid" ColumnName="scid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_blog">
+            <EntityTypeMapping TypeName="sherkatModel.tbl_blog">
+              <MappingFragment StoreEntitySet="tbl_blog">
+                <ScalarProperty Name="dateye" ColumnName="dateye" />
+                <ScalarProperty Name="datemon" ColumnName="datemon" />
+                <ScalarProperty Name="dateday" ColumnName="dateday" />
+                <ScalarProperty Name="ltext" ColumnName="ltext" />
+                <ScalarProperty Name="c5" ColumnName="c5" />
+                <ScalarProperty Name="c4" ColumnName="c4" />
+                <ScalarProperty Name="c3" ColumnName="c3" />
+                <ScalarProperty Name="c2" ColumnName="c2" />
+                <ScalarProperty Name="c1" ColumnName="c1" />
+                <ScalarProperty Name="thtext" ColumnName="thtext" />
+                <ScalarProperty Name="sectitle" ColumnName="sectitle" />
+                <ScalarProperty Name="sectext" ColumnName="sectext" />
+                <ScalarProperty Name="bold" ColumnName="bold" />
+                <ScalarProperty Name="firsttext" ColumnName="firsttext" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="btitle" ColumnName="btitle" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

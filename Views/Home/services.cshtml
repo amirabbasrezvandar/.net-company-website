@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "services";
+    Layout = "~/Views/Shared/_home_layout.cshtml";
+    var service = ViewBag.servs as List<sherkaty.Models.tbl_service>;
+    int page = ViewBag.page;
+    int totalpages = ViewBag.totalpages;
+
+
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">خدمات ما</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index">صفحه اصلی</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">خدمات ما</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Page Services Section Start -->
+<div class="page-services">
+    <div class="container">
+        <div class="row">
+            @foreach (var ser in service)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp">
+                        <div class="icon-box">
+                            <img src="~/styles/home/images/icon-service-1.svg" alt="">
+                        </div>
+
+                        <div class="service-item-content">
+                            <h3>@ser.smtitle</h3>
+                            <p>
+                                @(ser.des.Length >200 ? ser.des.Substring(0, 200) : ser.des)   <span>   ....</span>
+                            </p>
+                            <a href="@Url.Action("service_single", "Home", new { id = ser.sid })" class="service-btn">
+                                <img src="~/styles/home/images/arrow-white.svg"
+                                     alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Page Services Section End -->
+<!-- Pagination links -->
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center" style="direction: ltr;">
+        <li class="page-item @(page == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("services", new { page = page > 1 ? page - 1 : 1 })">صفحه قبل</a>
+        </li>
+
+        @for (int i = 1; i <= totalpages; i++)
+        {
+            <li class="page-item @(i == page ? "active" : "")">
+                <a class="page-link" href="@Url.Action("services", new { page = i })">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(page == totalpages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("services", new { page = page + 1 })">صفحه بعد</a>
+        </li>
+    </ul>
+</nav>
+
+
+@Html.Partial("~/Views/component/what_we_do.cshtml");
+
+
+@Html.Partial("~/Views/component/why_choose_us.cshtml");
+
+
+@Html.Partial("~/Views/component/FAQsco.cshtml");

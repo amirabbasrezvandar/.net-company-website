@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "blog";
+    Layout = "~/Views/Shared/_home_layout.cshtml";
+    int page = ViewBag.page;
+    int totalpages = ViewBag.totalpages;
+
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">آخرین وبلاگ</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index">صفحه اصلی</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">وبلاگ</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Page Blog Start -->
+<div class="page-blog">
+    <div class="container">
+        <div class="row">
+            ]
+            @foreach (var a in ViewBag.blog)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <!-- Post Item Start -->
+
+
+                    <div class="post-item wow fadeInUp">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image">
+                            <a href="@Url.Action("blog_single", "Home", new { id = a.bid })" data-cursor-text="نمایش">
+                                <figure class="image-anime">
+                                    <img src="@Url.Content("~/styles/home/images/" +a.img)">
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- Post Featured Image End -->
+                        <!-- Post Item Body Start -->
+                        <div class="post-item-body">
+                            <!-- Post Item Tag Start -->
+                            <div class="post-item-meta">
+                                <ul>
+                                    <li><i class="fa-solid fa-calendar-days"></i>@a.dateday @a.datemon   @a.dateye</li>
+                                </ul>
+                            </div>
+                            <!-- Post Item Tag End -->
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2>
+                                    <a href="@Url.Action("blog_single", "Home", new { id = a.bid })">
+                                        @a.btitle
+
+                                    </a>
+                                </h2>
+                            </div>
+                            <!-- Post Item Content End -->
+                            <!-- Post Item Readmore Button Start-->
+                            <div class="post-item-btn">
+                                <a href="@Url.Action("blog_single", "Home", new { id = a.bid })" class="readmore-btn">بیشتر بخوانید</a>
+                            </div>
+                            <!-- Post Item Readmore Button End-->
+                        </div>
+                        <!-- Post Item Body End -->
+                    </div>
+                  
+                    <!-- Post Item End -->
+                </div>
+            }
+            </div>
+    </div>
+</div>
+<!-- Page Blog End -->
+
+
+<nav aria-label="Page navigation" class="rtl-paginator">
+    <ul class="pagination justify-content-center modern-paginator" dir="ltr">
+        <li class="page-item @(page == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("edteam", new { page = page - 1 })" tabindex="-1">
+                <i class="bi bi-chevron-left"></i> صفحه قبل
+            </a>
+        </li>
+
+        @for (int i = 1; i <= totalpages; i++)
+        {
+            <li class="page-item @(i == page ? "active" : "")">
+                <a class="page-link" href="@Url.Action("edteam", new { page = i })">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(page == totalpages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("edteam", new { page = page + 1 })">
+                صفحه بعد <i class="bi bi-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
+</nav>

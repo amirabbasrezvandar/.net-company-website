@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sherkatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_blog">
+    <Key>
+      <PropertyRef Name="bid" />
+    </Key>
+    <Property Name="bid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="btitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="img" Type="nvarchar" MaxLength="100" />
+    <Property Name="firsttext" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bold" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sectext" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sectitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="thtext" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="c1" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="c2" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="c3" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="c4" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="c5" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ltext" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dateday" Type="int" Nullable="false" />
+    <Property Name="datemon" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="dateye" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_coll">
+    <Key>
+      <PropertyRef Name="coid" />
+    </Key>
+    <Property Name="coid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="coname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cofamily" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="coposition" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="coemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="coexperience" Type="nvarchar" MaxLength="50" />
+    <Property Name="cophnumber" Type="int" />
+    <Property Name="colocation" Type="nvarchar" MaxLength="50" />
+    <Property Name="coinfo" Type="nvarchar(max)" />
+    <Property Name="coexpertise" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="coabout" Type="nvarchar(max)" />
+    <Property Name="coimgpth" Type="varchar" MaxLength="50" />
+    <Property Name="IsFeatured" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_serivice_fea">
+    <Key>
+      <PropertyRef Name="ssid" />
+    </Key>
+    <Property Name="ssid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="thtitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="thdes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ch1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ch2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ch3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ch4" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ch5" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ch6" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_service">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="smtitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="headimg" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="des" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="vid" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="check1" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="check2" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="check3" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="check4" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_service_card">
+    <Key>
+      <PropertyRef Name="scid" />
+    </Key>
+    <Property Name="scid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="f1title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="f1text" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="f1check" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="f2title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="f2text" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="f2check" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="f3titlle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="f3text" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="f3check" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ctitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cdes" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view '39832_sherkat.dbo.tbl_service_second' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_service_second">
+    <Key>
+      <PropertyRef Name="srcid" />
+      <PropertyRef Name="srcdes" />
+      <PropertyRef Name="c1title" />
+      <PropertyRef Name="c1img" />
+      <PropertyRef Name="c2title" />
+      <PropertyRef Name="c2img" />
+      <PropertyRef Name="c3title" />
+      <PropertyRef Name="c3img" />
+      <PropertyRef Name="secondTitle" />
+      <PropertyRef Name="secondDes" />
+    </Key>
+    <Property Name="srcid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="srcdes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="c1title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c1img" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c2title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c2img" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c3title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c3img" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="secondTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="secondDes" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="sherkatModelStoreContainer">
+    <EntitySet Name="tbl_blog" EntityType="Self.tbl_blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_coll" EntityType="Self.tbl_coll" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_serivice_fea" EntityType="Self.tbl_serivice_fea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_service" EntityType="Self.tbl_service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_service_card" EntityType="Self.tbl_service_card" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_service_second" EntityType="Self.tbl_service_second" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_service_second].[srcid] AS [srcid], 
+    [tbl_service_second].[srcdes] AS [srcdes], 
+    [tbl_service_second].[c1title] AS [c1title], 
+    [tbl_service_second].[c1img] AS [c1img], 
+    [tbl_service_second].[c2title] AS [c2title], 
+    [tbl_service_second].[c2img] AS [c2img], 
+    [tbl_service_second].[c3title] AS [c3title], 
+    [tbl_service_second].[c3img] AS [c3img], 
+    [tbl_service_second].[secondTitle] AS [secondTitle], 
+    [tbl_service_second].[secondDes] AS [secondDes]
+    FROM [dbo].[tbl_service_second] AS [tbl_service_second]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
